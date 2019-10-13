@@ -1,5 +1,5 @@
 #include "DHT.h"
-
+//Es otra libreria para que arduino lea los datos de DHT11
 #define DHTPIN 12
 #define DHTTYPE DHT11
 

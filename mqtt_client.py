@@ -10,14 +10,14 @@ def on_connect(client, userdata, flags, rc):
     else:
         print('Connection failed')
 
-
+# Cuando recibe el mensaje, imprime
 def on_message(client, userdata, message):
     print('Message received:', message.payload.decode("utf-8"))
 
 
 Connected = False  # global variable for the state of the connection
 
-broker_address = "localhost"  # Broker address
+broker_address = "localhost"  # Broker address, local host
 user = "user1"  # Connection username
 password = "1234"  # Connection password
 

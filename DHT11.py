@@ -17,6 +17,7 @@ class DHT11:
         self.temp = temp
         return self.temp
 
+    #Conecta con arduino, le manda un "1" por SERIAL para obtener la Humedad
     def getHumidity(self):
         arduino.write(b'1')
         sleepy(5)

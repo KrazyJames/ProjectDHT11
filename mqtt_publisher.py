@@ -1,4 +1,4 @@
-import paho.mqtt.client as mqttClient
+import paho.mqtt.client as mqttClient #Libreria para mqtt de Paho, se instala aparte
 import time
 
 
