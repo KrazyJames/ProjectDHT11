@@ -1,6 +1,6 @@
 #include "DHT.h"
 
-#define DHTPIN 7
+#define DHTPIN 12
 #define DHTTYPE DHT11
 
 int pinEnergia = 13;
