@@ -1,5 +1,6 @@
-import paho.mqtt.client as mqttClient
 import time
+
+import paho.mqtt.client as mqtt_client
 
 
 def on_connect(client, userdata, flags, rc):
@@ -9,6 +10,7 @@ def on_connect(client, userdata, flags, rc):
         Connected = True  # Signal connection
     else:
         print('Connection failed')
+
 
 # Cuando recibe el mensaje, imprime
 def on_message(client, userdata, message):
@@ -21,7 +23,7 @@ broker_address = "localhost"  # Broker address, local host
 user = "user1"  # Connection username
 password = "1234"  # Connection password
 
-client = mqttClient.Client("Cliente")  # create new instance
+client = mqtt_client.Client("Cliente")  # create new instance
 client.username_pw_set(user, password=password)  # set username and password
 client.on_connect = on_connect  # attach function to callback
 client.on_message = on_message  # attach function to callback
@@ -30,7 +32,7 @@ client.connect(broker_address)  # connect to broker
 
 client.loop_start()  # start the loop
 
-while Connected != True:  # Wait for connection
+while not Connected:  # Wait for connection
     time.sleep(0.1)
 
 client.subscribe("python/test")

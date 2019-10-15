@@ -1,9 +1,13 @@
+from time import sleep as sleepy
+
+import serial as serial
+
+port = "com5"
+arduino = serial.Serial(port, 9600, timeout=5)
+sleepy(5)
+
+
 class DHT11:
-    from time import sleep as sleepy
-    import serial as serial
-    port = "com5"
-    arduino = serial.Serial(port, 9600, timeout=5)
-    sleepy(5)
 
     def __init__(self, temp, hum):
         self.temp = temp
@@ -17,7 +21,7 @@ class DHT11:
         self.temp = temp
         return self.temp
 
-    #Conecta con arduino, le manda un "1" por SERIAL para obtener la Humedad
+    # Connect arduino, le manda un "1" por SERIAL para obtener la Humedad
     def getHumidity(self):
         arduino.write(b'1')
         sleepy(5)
