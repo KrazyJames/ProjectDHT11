@@ -2,7 +2,7 @@ from time import sleep as sleepy
 
 import serial as serial
 
-port = "com5"
+port = "/dev/ttyACM0"
 arduino = serial.Serial(port, 9600, timeout=5)
 sleepy(5)
 
@@ -21,7 +21,6 @@ class DHT11:
         self.temp = temp
         return self.temp
 
-    # Connect arduino, le manda un "1" por SERIAL para obtener la Humedad
     def getHumidity(self):
         arduino.write(b'1')
         sleepy(5)

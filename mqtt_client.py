@@ -3,7 +3,7 @@ import time
 import paho.mqtt.client as mqtt_client
 
 
-def on_connect(client, userdata, flags, rc):
+def on_connect(userdata, flags, rc):
     if rc == 0:
         print("Connected to broker")
         global Connected  # Use global variable
@@ -13,17 +13,17 @@ def on_connect(client, userdata, flags, rc):
 
 
 # Cuando recibe el mensaje, imprime
-def on_message(client, userdata, message):
+def on_message(userdata, message):
     print('Message received:', message.payload.decode("utf-8"))
 
 
 Connected = False  # global variable for the state of the connection
 
-broker_address = "localhost"  # Broker address, local host
+broker_address = "192.168.43.94"  # Broker address, local host
 user = "user1"  # Connection username
 password = "1234"  # Connection password
 
-client = mqtt_client.Client("Cliente")  # create new instance
+client = mqtt_client.Client("el_cliente")  # create new instance
 client.username_pw_set(user, password=password)  # set username and password
 client.on_connect = on_connect  # attach function to callback
 client.on_message = on_message  # attach function to callback
