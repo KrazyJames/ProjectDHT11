@@ -35,7 +35,7 @@ client.loop_start()  # start the loop
 while not Connected:  # Wait for connection
     time.sleep(0.1)
 
-client.subscribe("python/test")
+client.subscribe("python/temp")
 
 try:
     while True:
