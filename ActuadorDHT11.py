@@ -1,4 +1,5 @@
 from time import sleep as sleepy
+
 import serial
 
 arduino = serial.Serial("com5", 9600, timeout=5)
@@ -10,7 +11,7 @@ def get_temperature():
     sleepy(5)
     temp = arduino.readline()
     temp = temp.decode("utf-8")
-    print(temp)
+    print(temp.strip(), "°")
 
 
 def get_humidity():
@@ -18,7 +19,7 @@ def get_humidity():
     sleepy(5)
     hum = arduino.readline()
     hum = hum.decode("utf-8")
-    print(hum)
+    print(hum.strip(), "%")
 
 
 def menu():
