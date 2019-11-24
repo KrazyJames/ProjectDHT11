@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Teempo</string>
+    <string name="btnUpdateTemp">Actualizar Temperatura</string>
+    <string name="btnUpdateHum">Actualizar Humedad</string>
+    <string name="txtTmp">Temperatura Actual</string>
+    <string name="defaultTemp">0</string>
+</resources>
