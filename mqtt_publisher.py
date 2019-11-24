@@ -19,9 +19,13 @@ def on_message(client, userdata, message):
     m = message.payload.decode("utf-8")
     print('Message received:', m)
     if m == '1':
-        client.publish("python/pub", dht11.get_humidity())
+        print("Sending humidity...")
+        client.publish("teempo/pub/hum", dht11.get_humidity())
+        print("Humidity sent")
     elif m == '0':
-        client.publish("python/pub", dht11.get_temperature())
+        print("Sending temperature...")
+        client.publish("teempo/pub/temp", dht11.get_temperature())
+        print("Temperature sent")
 
 
 # Connected = False  # global variable for the state of the connection
@@ -35,7 +39,7 @@ client.username_pw_set(user, password=password)  # set username and password
 client.on_connect = on_connect  # attach function to callback
 client.connect(broker_address)  # connect to broker
 client.on_message = on_message  # attach function to callback
-client.subscribe("python/client")
+client.subscribe("teempo/client")
 client.loop_forever()
 # client.loop_start()  # start the loop
 
