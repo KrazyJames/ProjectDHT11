@@ -1,16 +1,25 @@
 # ProjectDHT11
-DHT11 with Python and Arduino
+DHT11 control via MQTT on Android
 
-Arduino IDE needed: https://www.arduino.cc/en/Main/Software
+## Getting started
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-In arduino you need some libraries: 
-1. *Adafruit Unified Sensor Library* (To use the next one)
-2. *Adafruit DHT sensor library* (To get dht11's data and manipulate it)
+## Requisites
 
-You can install libraries in Arduino IDE on *Tools > Manage Libraries*
+### Arduino libraries
 
-You should install the paho library for mqtt and the mosquitto broker in your pc.
+* *Adafruit Unified Sensor Library*
+* *Adafruit DHT sensor library*
 
+You can install libraries in Arduino IDE on 
+*Tools > Manage Libraries*
+
+### Mosquitto
+You should install the mosquitto broker in your pc for local use.
+Follow the instructions to install correctly mosquitto broker at your pc, you can find mosquitto broker at: https://mosquitto.org/download/
+
+### MQTT Libraries for Python
 You can find the python paho mqtt library at: https://pypi.org/project/paho-mqtt/ (pip needed)
 
-Follow the instructions to install correctly mosquitto broker at your pc, you can find mosquitto broker at: https://mosquitto.org/download/
+### Android libraries
+* [Eclipse Paho Android Service](https://github.com/eclipse/paho.mqtt.android) - On GitHub
