@@ -1,4 +1,4 @@
-# ProjectDHT11
+# Teempo
 DHT11 control via MQTT on Android
 
 ## Getting started
